@@ -25,15 +25,28 @@ metadata {
 		capability "Switch"
 		capability "Polling"
 		capability "Refresh"
+<<<<<<< HEAD
+		capability "Health Check"
+
+		fingerprint manufacturer: "015D", prod: "0221", model: "251C", deviceJoinName: "Show Home 2-Channel Smart Plug"
+		fingerprint manufacturer: "0312", prod: "0221", model: "251C", deviceJoinName: "Inovelli 2-Channel Smart Plug"
+		fingerprint manufacturer: "0312", prod: "B221", model: "251C", deviceJoinName: "Inovelli 2-Channel Smart Plug"
+		fingerprint manufacturer: "0312", prod: "0221", model: "611C", deviceJoinName: "Inovelli 2-Channel Outdoor Smart Plug"
+		fingerprint manufacturer: "015D", prod: "0221", model: "611C", deviceJoinName: "Inovelli 2-Channel Outdoor Smart Plug"
+		fingerprint manufacturer: "015D", prod: "6100", model: "6100", deviceJoinName: "Inovelli 2-Channel Outdoor Smart Plug"
+		fingerprint manufacturer: "015D", prod: "2500", model: "2500", deviceJoinName: "Inovelli 2-Channel Smart Plug w/Scene"
+=======
 		//capability "Health Check"
 
+		fingerprint manufacturer: "015D", prod: "0221", model: "251C", deviceJoinName: "Show Home 2-Channel Smart Plug"
         fingerprint manufacturer: "0312", prod: "0221", model: "251C", deviceJoinName: "Inovelli 2-Channel Smart Plug"
+		fingerprint manufacturer: "0312", prod: "B221", model: "251C", deviceJoinName: "Inovelli 2-Channel Smart Plug"
         fingerprint manufacturer: "0312", prod: "0221", model: "611C", deviceJoinName: "Inovelli 2-Channel Outdoor Smart Plug"
         fingerprint manufacturer: "015D", prod: "0221", model: "611C", deviceJoinName: "Inovelli 2-Channel Outdoor Smart Plug"
         fingerprint manufacturer: "015D", prod: "2500", model: "2500", deviceJoinName: "Inovelli 2-Channel Smart Plug w/Scene"
         fingerprint manufacturer: "0312", prod: "2500", model: "2500", deviceJoinName: "Inovelli 2-Channel Smart Plug w/Scene"
         
-
+>>>>>>> b08752edc4378975deb4de829415d2bf682b159c
 	}
 	simulator {}
 	preferences {}
@@ -196,6 +209,10 @@ def poll() {
 def refresh() {
 	logging("refresh()", 1)
 	commands([
+<<<<<<< HEAD
+=======
+            //zwave.switchBinaryV1.switchBinaryGet(),
+>>>>>>> b08752edc4378975deb4de829415d2bf682b159c
 			encap(zwave.switchBinaryV1.switchBinaryGet(), 1),
 			encap(zwave.switchBinaryV1.switchBinaryGet(), 2),
 	])
@@ -268,11 +285,15 @@ private def logging(message, level) {
 			case "99":
 				log.debug "$message"
 				break
-      default:
-        log.debug "$message"
+<<<<<<< HEAD
+		}
+	}
+}
+=======
+            default:
+                log.debug "$message"
 				break
 		}
 	}
 }
-
-
+>>>>>>> b08752edc4378975deb4de829415d2bf682b159c
